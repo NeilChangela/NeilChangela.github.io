@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neil Changela | Finance Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafaf8;
+      --surface: #ffffff;
+      --text: #1c1f24;
+      --muted: #5b6270;
+      --line: #e4e4df;
+      --accent: #cc0033; /* Rutgers scarlet */
+      --accent-soft: #fbeaee;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Nav */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(250,250,248,0.92);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      max-width: 960px; margin: 0 auto; padding: 14px 20px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .logo { font-weight: 700; color: var(--text); letter-spacing: 0.5px; }
+    .nav-links a { color: var(--muted); margin-left: 22px; font-size: 0.95rem; font-weight: 500; }
+    .nav-links a:hover { color: var(--accent); text-decoration: none; }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+    section:last-of-type { border-bottom: none; }
+    h2 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 1.8rem; margin-bottom: 28px;
+    }
+    h2::after {
+      content: ""; display: block; width: 40px; height: 3px;
+      background: var(--accent); margin-top: 10px;
+    }
+
+    /* Hero */
+    .hero { padding: 110px 0 90px; }
+    .eyebrow {
+      display: inline-block; font-size: 0.8rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--accent); background: var(--accent-soft);
+      padding: 5px 12px; border-radius: 20px; margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: clamp(2.4rem, 6vw, 3.6rem); line-height: 1.1; margin-bottom: 20px;
+    }
+    .statement { font-size: 1.25rem; color: var(--muted); max-width: 680px; margin-bottom: 32px; }
+    .btn {
+      display: inline-block; padding: 11px 22px; border-radius: 6px;
+      font-weight: 600; font-size: 0.95rem; margin: 0 10px 10px 0;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-outline { border: 1.5px solid var(--text); color: var(--text); }
+    .btn:hover { text-decoration: none; opacity: 0.88; }
+
+    /* Skills */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .skill-card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: 10px; padding: 24px;
+    }
+    .skill-card h3 { font-size: 1.05rem; margin-bottom: 14px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      font-size: 0.85rem; padding: 4px 11px; border-radius: 4px;
+      background: var(--bg); border: 1px solid var(--line); color: var(--text);
+    }
+
+    /* Projects */
+    .projects { display: grid; gap: 22px; }
+    .project {
+      background: var(--surface); border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px; padding: 26px 28px;
+    }
+    .project-meta { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 600; margin-bottom: 6px; }
+    .project h3 { font-size: 1.25rem; margin-bottom: 10px; }
+    .project p { color: var(--muted); margin-bottom: 14px; }
+    .project .tags { margin-bottom: 16px; }
+    .project-link { font-weight: 600; font-size: 0.95rem; }
+
+    /* Contact */
+    .contact p { color: var(--muted); margin-bottom: 24px; max-width: 600px; }
+    footer { text-align: center; padding: 30px 20px; color: var(--muted); font-size: 0.85rem; }
+
+    @media (max-width: 600px) {
+      .nav-links a { margin-left: 14px; font-size: 0.85rem; }
+      .hero { padding: 70px 0 60px; }
+      section { padding: 56px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#top" class="logo">Neil Changela</a>
+      <div class="nav-links">
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" id="top">
+
+    <!-- PERSONAL STATEMENT -->
+    <section class="hero">
+      <span class="eyebrow">Rutgers Business School &middot; Class of 2027</span>
+      <h1>Neil Changela</h1>
+      <p class="statement">
+        I'm a Finance student at Rutgers Business School who turns financial models and market data into clear, decision-ready investment analysis.
+      </p>
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Valuation &amp; Corporate Finance</h3>
+          <div class="tags">
+            <span class="tag">DCF Modeling</span>
+            <span class="tag">WACC &amp; CAPM</span>
+            <span class="tag">M&amp;A Accretion/Dilution</span>
+            <span class="tag">Pro Forma EPS</span>
+            <span class="tag">Capital Structure</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>Investment Analysis</h3>
+          <div class="tags">
+            <span class="tag">Equity Research</span>
+            <span class="tag">Comparable Company Analysis</span>
+            <span class="tag">Ratio Analysis</span>
+            <span class="tag">Beta &amp; Risk Analysis</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>Quantitative Methods</h3>
+          <div class="tags">
+            <span class="tag">Linear &amp; Integer Programming</span>
+            <span class="tag">Sensitivity Analysis</span>
+            <span class="tag">Simulation</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>Tools &amp; Languages</h3>
+          <div class="tags">
+            <span class="tag">Excel</span>
+            <span class="tag">PowerPoint</span>
+            <span class="tag">Word</span>
+            <span class="tag">Python (basic)</span>
+            <span class="tag">Java (basic)</span>
+            <span class="tag">C++ (basic)</span>
+            <span class="tag">English &amp; Gujarati (native)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+
+        <article class="project">
+          <div class="project-meta">Course Project &middot; Equity Analysis</div>
+          <h3>Tesla Investment Analysis</h3>
+          <p>Built a full equity valuation of Tesla, including a DCF model (10% WACC), P/E comparables against Ford and GM, and beta analysis. The base-case DCF implied roughly $87 per share against a ~$350 market price, showing how much of the valuation rests on FSD, Robotaxi, and Optimus.</p>
+          <div class="tags">
+            <span class="tag">DCF</span><span class="tag">Comparables</span><span class="tag">Beta</span>
+          </div>
+          <a class="project-link" href="projects/tesla-analysis.pdf" target="_blank">View presentation &rarr;</a>
+        </article>
+
+        <article class="project">
+          <div class="project-meta">Group Project &middot; Business Investment Analysis &middot; Spring 2026</div>
+          <h3>Amazon vs. Walmart Investment Comparison</h3>
+          <p>Compared Amazon and Walmart on business model, P/E, ROE, ROIC, and price-to-free-cash-flow as part of a six-person team. The group recommended a Buy on Amazon and a Hold on Walmart.</p>
+          <div class="tags">
+            <span class="tag">Ratio Analysis</span><span class="tag">Comparables</span><span class="tag">Team Collaboration</span>
+          </div>
+          <a class="project-link" href="projects/amazon-vs-walmart.pdf" target="_blank">View presentation &rarr;</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>I'm seeking internship and full-time opportunities in finance. Feel free to reach out.</p>
+      <a href="mailto:nc1006@scarletmail.rutgers.edu" class="btn btn-primary">Email Me</a>
+      <a href="resume.pdf" target="_blank" class="btn btn-outline">Resume</a>
+    </section>
+
+  </main>
+
+  <footer>&copy; 2026 Neil Changela &middot; Built with HTML &amp; CSS, hosted on GitHub Pages</footer>
+
+</body>
+</html>
